@@ -1,0 +1,1 @@
+import{r as a,j as r}from"./index-B-DBDDfx.js";const t="_boxIframe_1whcq_1",s={boxIframe:t},e=a.memo(()=>r.jsx("div",{className:`${s.AiWrapper} w980`,children:r.jsx("iframe",{title:"ai",className:`${s.boxIframe} custom-scrollbar`,src:"https://udify.app/chatbot/ZqpXU3hyv7xLlWit",allow:"microphone"})}));export{e as default};
