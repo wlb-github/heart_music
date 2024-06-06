@@ -48,13 +48,10 @@ export default function Lyric() {
     if (!scrollDiv.current || !lyricDiv.current) return
     e.preventDefault()
     const currentOffset = scrollDiv.current.getBoundingClientRect().top - lyricDiv.current.getBoundingClientRect().top
-    console.log(currentOffset)
 
     const bottomScrollOffset = -(scrollDiv.current.getBoundingClientRect().height - lyricDiv.current.getBoundingClientRect().height / 2)
-    console.log('bottom', bottomScrollOffset)
 
     const topScrollOffset = -(-lyricDiv.current.getBoundingClientRect().height / 2)
-    console.log('top', topScrollOffset)
 
     let newOffset = currentOffset
     // 鼠标滚轮往下走
@@ -67,9 +64,9 @@ export default function Lyric() {
     }
 
     if (newOffset < bottomScrollOffset) {
-      newOffset = bottomScrollOffset // Ensure not to scroll above the top
+      newOffset = bottomScrollOffset
     } else if (newOffset > topScrollOffset) {
-      newOffset = topScrollOffset // Ensure not to scroll below the bottom
+      newOffset = topScrollOffset
     }
 
     scrollDiv.current.style.transform = `translateY(${newOffset}px)`
