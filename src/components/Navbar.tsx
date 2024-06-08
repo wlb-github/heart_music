@@ -32,6 +32,9 @@ export default function Navbar() {
             <NavLink className={({ isActive }) => (isActive ? styles['active'] : '')} to="/ai">
               智能推荐
             </NavLink>
+            <NavLink className={({ isActive }) => (isActive ? styles['active'] : '')} to="/view">
+              音乐可视化
+            </NavLink>
           </div>
         </div>
         <div className={styles['right']}>

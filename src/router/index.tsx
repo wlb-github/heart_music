@@ -75,6 +75,13 @@ export const routes: RouteObject[] = [
         },
       },
       {
+        path: 'view',
+        lazy: async () => {
+          const View = await import('../pages/AudioView')
+          return { Component: View.default }
+        },
+      },
+      {
         path: 'search',
         lazy: async () => {
           const Search = await import('../pages/Search')
