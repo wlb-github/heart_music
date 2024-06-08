@@ -13,7 +13,7 @@ const MusicPlayer: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState(false)
   const [currentFile, setCurrentFile] = useState<File | null>(null)
   const [playbackTime, setPlaybackTime] = useState(0)
-  const audioCtx = useRef(new (window.AudioContext || window.webkitAudioContext)())
+  const audioCtx = useRef(new window.AudioContext())
   const audioBufferSourceNode = useRef<null | AudioBufferSourceNode>(null)
   const analyser = useRef(audioCtx.current.createAnalyser())
   const stageDivRef = useRef<HTMLDivElement>(null)
@@ -129,12 +129,12 @@ const MusicPlayer: React.FC = () => {
 
   const animeDiv = (audioInfoArray: Uint8Array) => {
     const stageDivEl = stageDivRef.current
-    for (let i = 0; i < stageDivEl?.children.length; i++) {
+    for (let i = 0; i < stageDivEl!.children.length; i++) {
       if (audioInfoArray[i] === 0) {
         audioInfoArray[i] = 4
       }
       anime({
-        targets: stageDivEl.children[i],
+        targets: stageDivEl?.children[i],
         height: [audioInfoArray[i] / 2],
         duration: 1,
       })

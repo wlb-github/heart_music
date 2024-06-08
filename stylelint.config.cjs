@@ -21,5 +21,5 @@ module.exports = {
     'no-empty-source': null,
     'no-descending-specificity': null,
   },
-  ignoreFiles: ['dist/**/*'],
+  ignoreFiles: ['dist', '.eslintrc.cjs', '**/*.scss'],
 }
